@@ -4,43 +4,41 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
 }
 
-.birthday-cake {
+.birthday-cake-container {
     position: relative;
     top: 20px;
+    /* background-color: #0f2edd; */
 }
 
-
-/* MAYBE ? Style the cake holder and the shadow: */
-
-/* Style the cake: */
 .cake {
-    position: absolute;
-    overflow: hidden;
+    position: relative;
+    background-color: #FAD7A0;
     width: 275px;
     height: 140px;
-    background-color: #FAD7A0;
-    top: -130px;
-    left: -101px;
-    border-radius: 30px 30px 15px 15px;
+    border-radius: 15px 15px 10px 10px;
+    overflow: hidden;
+    margin-top: 50%;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.cake:before {
+.cake::before {
     content: "";
     background-color: #dd1a0f;
     border-bottom: #ffffff solid 12px;
     width: 275px;
     height: 15px;
     position: absolute;
-    top: 75px;
-    /* box-shadow: 0 30px #dd1a0f; */
+    top: 43%;
 }
 
-.cake:after {
+.cake::after {
     content: "";
     position: absolute;
-    background-color: #ffffff;
+    background-color: #f9f8f1;
     width: 275px;
     height: 40px;
     box-shadow: inset 0 10px rgba(0, 0, 0, 0.07);
@@ -48,28 +46,27 @@ body {
 
 .icing {
     position: absolute;
-    background-color: #ffffff;
+    background-color: #f9f8f1;
     width: 25px;
-    height: 45px;
+    height: 35px;
     top: 25px;
     left: 0;
     z-index: 2;
     border-radius: 50px;
-        box-shadow: 25px 2px #FAD7A0, 50px -10px #ffffff, 75px -5px #FAD7A0, 100px 3px #ffffff, 125px 0 #FAD7A0, 150px -5px #ffffff, 175px 3px #FAD7A0, 200px -5px #ffffff, 225px -10px #FAD7A0, 250px 4px #ffffff;
-
+    box-shadow: 25px -10px #FAD7A0, 50px -12px #f9f8f1, 75px -10px #FAD7A0, 100px 3px #f9f8f1, 125px -5px #FAD7A0, 150px -5px #f9f8f1, 175px -7px #FAD7A0, 200px -5px #f9f8f1, 225px -12px #FAD7A0, 250px 4px #f9f8f1;
 }
 
-/* Candles */
+    /* Candle without flame */
 .candle {
     position: absolute;
     width: 9px;
     height: 70px;
     background-color: #ffffff;
-    top: -200px;
-    left: 30px;
-    box-shadow: inset 0 -10px 0 #49b97d;
+    top: -70px; /* Adjust the vertical position to sit on top of the cake */
+    left: 25px; /* Adjust left position to align with the cake */
 }
 
+/* Candle with flame */
 .candle:before {
     content: "";
     position: absolute;
@@ -80,32 +77,18 @@ body {
     box-shadow: 0 25px #49b97d;
 }
 
-
-/*  red   #E74C3C*/
-
-/* .candle:after {
-    content: "";
-    width: 2px;
-    height: 15px;
+/* Candle flame (unchanged from your code) */
+.candle:after {
     content: "";
     position: absolute;
-    background-color: black;
-    top: -15px;
-    left: 6px;
-}
-
-.flame {
-    position: absolute;
-    background-color: #F4D03F;
-    opacity: 0.9;
-    box-shadow: inset 0 -5px 5px #D35400, 5px -5px 20px #FBFFA3;
     width: 20px;
-    height: 30px;
-    top: -240px;
-    border-radius: 50%;
-    left: 26.5px;
-    animation: flame 0.5s infinite;
-
-} */
-
-
+    height: 20px;
+    background-color: #fcca46;
+    border-radius: 80% 15% 55% 50% / 55% 15% 80% 50%;
+    box-shadow: inset -3px 3px #f06407;
+    transform: rotate(-45deg);
+    top: -28px;
+    left: -5px;
+    opacity: 0.9;
+    animation: scale .5s ease-out infinite;
+}
